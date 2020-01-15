@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 
+	namespace : DAO의 인터페이스 풀네임으로
+	id: 해당 인터페이스 메서드명 
+	자동으로 매핑
+ -->
+<mapper namespace=".IMemberDao">
+	<select id="selectMember" parameterType="String" resultType=".MemberVO">
+		select * from member where mem_id = #{mem_id}
+	</select>
+	
+	
+	<insert id="insertMember" parameterType="???.MemberVO">
+		insert into member(
+			mem_id,
+			mem_pass,
+			mem_name,
+			mem_email
+		)values(
+			#{mem_id},
+			#{mem_pass},
+			#{mem_name},
+			#{mem_emil},
+		)
+	</insert>
+	
+	
+	<update id="updateMember" parameterType=".MemberVO">
+		update 
+			member 
+		set 
+			mem_pass = #{mem_pass},
+			mem_emil = #{mem_email}
+		where  
+			mem_id = #{mem_id}
+	</update>
+	
+	
+	
+	
+</mapper>
